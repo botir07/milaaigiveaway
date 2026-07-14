@@ -1,13 +1,103 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Mila Gateway</title>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mila Gateway — Demo</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="dark">
+    <div class="app fade-in">
+      <header class="topbar">
+        <div class="left">
+          <button class="menu">☰</button>
+          <div class="logo">Mila Gateway</div>
+        </div>
+        <div class="right">
+          <div class="profile-quick">
+            <div class="avatar">B</div>
+            <div class="who">Botir Abduqodirov</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card balance">
+          <h3>Stars баланс</h3>
+          <div class="balance-row">
+            <div class="star-ico">⭐</div>
+            <div class="balance-info">
+              <div class="amount" id="starsAmount">250</div>
+              <div class="sub">Stars</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <button class="btn primary pulse" id="buyStars">★ Купить Stars</button>
+            <button class="btn outline" id="buyPremium">💎 Premium</button>
+          </div>
+        </section>
+
+        <section class="card shop">
+          <h3>Stars do'koni</h3>
+          <ul class="shop-list">
+            <li class="shop-item"><div>50 Stars</div><div class="price">12 000 so'm</div><button class="btn small">Купить</button></li>
+            <li class="shop-item"><div>100 Stars</div><div class="price">23 500 so'm</div><button class="btn small">Купить</button></li>
+            <li class="shop-item"><div>250 Stars</div><div class="price">56 000 so'm</div><button class="btn small">Купить</button></li>
+            <li class="shop-item"><div>500 Stars</div><div class="price">110 000 so'm</div><button class="btn small">Купить</button></li>
+          </ul>
+        </section>
+
+        <section class="card premium">
+          <h3>Premium</h3>
+          <div class="premium-list">
+            <div class="premium-item">Telegram Premium — 1 oy <span class="price">30 000 so'm</span><button class="btn small">Купить</button></div>
+            <div class="premium-item">Telegram Premium — 6 oy <span class="price">140 000 so'm</span><button class="btn small">Купить</button></div>
+          </div>
+        </section>
+
+        <section class="card gifts">
+          <h3>Gift do'koni</h3>
+          <div class="gifts-grid">
+            <div class="gift">🧸<div>25 Stars</div></div>
+            <div class="gift">❤️<div>15 Stars</div></div>
+            <div class="gift">🌹<div>20 Stars</div></div>
+            <div class="gift">🍰<div>30 Stars</div></div>
+          </div>
+        </section>
+
+        <section class="card orders">
+          <h3>Buyurtmalar</h3>
+          <ul class="orders-list">
+            <li>100 Stars — 23 500 so'm <span class="status done">Тugallangan</span></li>
+            <li>Premium — 1 oy — 30 000 so'm <span class="status processing">Jarayonda</span></li>
+            <li>Teddy Bear — 25 Stars <span class="status done">Tugallangan</span></li>
+          </ul>
+        </section>
+
+        <section class="card profile">
+          <h3>Profil</h3>
+          <div class="profile-card">
+            <div class="avatar large">B</div>
+            <div class="p-info">
+              <div class="p-name">Botir Abduqodirov</div>
+              <div class="p-handle">@botir_dev</div>
+              <div class="p-stats">Stars: <strong id="miniStars">250</strong> · Referral: <strong>125</strong></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav">
+        <button class="nav-item active">Bosh sahifa</button>
+        <button class="nav-item">Stars</button>
+        <button class="nav-item">Gifts</button>
+        <button class="nav-item">Profil</button>
+      </nav>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
 
 <div class="app">
 
