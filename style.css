@@ -1,0 +1,36 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #07111f;
+  color: #f8fafc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: linear-gradient(135deg, #07111f, #12233d); min-height: 100vh; color: #f8fafc; }
+.app { max-width: 760px; margin: 0 auto; padding: 16px 16px 90px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; padding: 10px 0 18px; }
+.icon-btn, .nav-item, .primary-btn, .secondary-btn, .method-btn, .cancel-btn, .tab-chip, .package-card { border: 0; border-radius: 14px; font: inherit; }
+.icon-btn { background: rgba(255,255,255,0.12); color: white; padding: 10px 12px; }
+.greeting-card, .list-card, .menu-item, .stat-box, .modal-sheet { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 18px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+.greeting-card { padding: 16px; margin-bottom: 14px; }
+.greeting-row, .balance-row, .stat-row, .menu-item { display: flex; align-items: center; justify-content: space-between; }
+.avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,0.12); margin-right: 12px; font-size: 1.2rem; }
+.name { font-weight: 700; }
+.muted { opacity: .7; font-size: .9rem; }
+.balance-row { margin-top: 12px; }
+.primary-btn, .secondary-btn, .method-btn, .cancel-btn, .package-card { width: 100%; padding: 13px 14px; margin-bottom: 10px; color: white; cursor: pointer; }
+.primary-btn { background: linear-gradient(90deg, #5b8cff, #7c3aed); }
+.secondary-btn, .method-btn, .package-card { background: rgba(255,255,255,0.12); }
+.cancel-btn { background: rgba(255,255,255,0.08); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.section-title { margin: 14px 0 8px; font-size: 1rem; }
+.list, .grid-2 { display: grid; gap: 10px; }
+.list-card { padding: 12px 14px; }
+.list-title { font-weight: 700; margin-bottom: 4px; }
+.bottom-nav { position: fixed; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: repeat(4, 1fr); padding: 10px 8px 16px; background: rgba(7,17,31,0.95); backdrop-filter: blur(16px); }
+.nav-item { background: transparent; color: #dbeafe; padding: 10px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.nav-item.active { color: #fff; background: rgba(91,140,255,0.2); }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: grid; place-items: end center; padding: 16px; }
+.modal-sheet { width: min(100%, 520px); padding: 14px; }
+.text-input { width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.08); color: white; }
+.toast { position: fixed; left: 50%; bottom: 84px; transform: translateX(-50%); background: #111827; color: white; padding: 10px 14px; border-radius: 999px; }
+.hidden { display: none !important; }

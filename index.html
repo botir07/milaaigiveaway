@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mila Gateway</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ================= HEADER ================= -->
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn">☰</button>
+    <h1 id="pageTitle">Mila Gateway</h1>
+    <button class="icon-btn">🔔</button>
+  </header>
+
+  <!-- ================= HOME ================= -->
+  <main class="view" id="view-home">
+    <section class="greeting-card">
+      <div class="greeting-row">
+        <div class="avatar">😊</div>
+        <div>
+          <div class="muted">Assalomu alaykum,</div>
+          <div class="name" id="userName">Foydalanuvchi</div>
+        </div>
+      </div>
+      <div class="balance-row">
+        <div class="balance-label">
+          <span class="star">⭐</span>
+          <span>Stars balansi</span>
+        </div>
+        <div class="balance-value" id="balanceValue">0</div>
+      </div>
+    </section>
+
+    <button class="primary-btn" data-goto="stars">⭐ Stars sotib olish</button>
+
+    <div class="two-col">
+      <button class="secondary-btn" data-goto="premium">💎 Premium olish</button>
+      <button class="secondary-btn" data-goto="gifts">🎁 Gift yuborish</button>
+    </div>
+
+    <h3 class="section-title">Mashhur paketlar</h3>
+    <div class="two-col" id="popularPackages"></div>
+  </main>
+
+  <!-- ================= STARS ================= -->
+  <main class="view hidden" id="view-stars">
+    <div class="list" id="starsList"></div>
+  </main>
+
+  <!-- ================= PREMIUM ================= -->
+  <main class="view hidden" id="view-premium">
+    <div class="list" id="premiumList"></div>
+  </main>
+
+  <!-- ================= GIFTS ================= -->
+  <main class="view hidden" id="view-gifts">
+    <div class="grid-2" id="giftsGrid"></div>
+  </main>
+
+  <!-- ================= ORDERS ================= -->
+  <main class="view hidden" id="view-orders">
+    <div class="tabs-inline" id="ordersTabs">
+      <button class="tab-chip active" data-filter="all">Barcha</button>
+      <button class="tab-chip" data-filter="paid">Tugallangan</button>
+      <button class="tab-chip" data-filter="pending">Jarayonda</button>
+    </div>
+    <div class="list" id="ordersList"></div>
+  </main>
+
+  <!-- ================= PROFILE ================= -->
+  <main class="view hidden" id="view-profile">
+    <section class="greeting-card">
+      <div class="greeting-row">
+        <div class="avatar">😊</div>
+        <div>
+          <div class="name" id="profileName">Foydalanuvchi</div>
+          <div class="muted" id="profileUsername">@username</div>
+        </div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-value" id="profileBalance">0</div>
+          <div class="stat-label">⭐ Stars balansi</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="profileReferrals">0</div>
+          <div class="stat-label">🔗 Referal</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="menu-list">
+      <div class="menu-item" data-goto="orders">📊 Ma'lumotlarim <span>›</span></div>
+      <div class="menu-item" data-goto="orders">📦 Buyurtmalarim <span>›</span></div>
+      <div class="menu-item" id="referralItem">🔗 Referal havolam <span>›</span></div>
+      <div class="menu-item" id="settingsItem">⚙️ Sozlamalar <span>›</span></div>
+    </div>
+  </main>
+
+  <!-- ================= BOTTOM NAV ================= -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-tab="home"><span>🏠</span>Bosh sahifa</button>
+    <button class="nav-item" data-tab="stars"><span>⭐</span>Stars</button>
+    <button class="nav-item" data-tab="gifts"><span>🎁</span>Gifts</button>
+    <button class="nav-item" data-tab="profile"><span>👤</span>Profil</button>
+  </nav>
+
+</div>
+
+<!-- ============== PAYMENT MODAL ============== -->
+<div class="modal hidden" id="paymentModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <h3 id="modalTitle">To'lov usulini tanlang</h3>
+    <p class="modal-item-name" id="modalItemName"></p>
+    <button class="method-btn" data-method="click">🖱️ Click</button>
+    <button class="method-btn" data-method="payme">💳 Payme</button>
+    <button class="method-btn" data-method="uzum">🏦 Uzum Bank</button>
+    <button class="cancel-btn" id="modalCancel">Bekor qilish</button>
+  </div>
+</div>
+
+<!-- ============== GIFT RECIPIENT MODAL ============== -->
+<div class="modal hidden" id="giftModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <h3>Qabul qiluvchini kiriting</h3>
+    <p class="modal-item-name" id="giftModalItemName"></p>
+    <input type="text" id="giftRecipientInput" placeholder="@username" class="text-input">
+    <button class="method-btn confirm" id="giftConfirmBtn">Yuborish</button>
+    <button class="cancel-btn" id="giftModalCancel">Bekor qilish</button>
+  </div>
+</div>
+
+<!-- ============== TOAST ============== -->
+<div class="toast hidden" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
